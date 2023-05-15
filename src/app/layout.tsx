@@ -1,5 +1,6 @@
 import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
+import LeftNavigation from '@/components/leftNavigation/LeftNavigation';
 
 export const metadata = {
   title: 'Twitch Stats - HOME',
@@ -15,7 +16,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        {children}
+        <div className="flex flex-row">
+          <LeftNavigation />
+          <div>{children}</div>
+        </div>
       </body>
     </html>
   );
