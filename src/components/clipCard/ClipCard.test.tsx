@@ -3,7 +3,6 @@ import { screen, render } from '@testing-library/react';
 import { Clip } from '@/types';
 import { beforeEach } from '@jest/globals';
 import ClipCard from '@/components/clipCard/ClipCard';
-import exp from 'constants';
 
 const mockClip: Clip = {
   id: 'AwkwardTenuousPoxPeteZarollTie',
