@@ -5,32 +5,36 @@ import Image from 'next/image';
 import { MdDarkMode, MdLightMode, MdSearch } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 const Navbar = () => {
   const router = useRouter();
 
-  const [theme, setTheme] = useState<string>(localStorage.getItem('theme')!);
+  const [theme, setTheme] = useState<string>(Cookies.get('theme') || 'light');
   const [searchValue, setSearchValue] = useState<string>('');
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedTheme = localStorage.getItem('theme');
-      if (!storedTheme) {
-        localStorage.setItem('theme', 'light');
-        setTheme('light');
-      } else {
-        setTheme(storedTheme);
-      }
+    if (!Cookies.get('theme')) {
+      Cookies.set('theme', 'light');
+    }
+    if (
+      Cookies.get('theme') === 'dark' ||
+      (!('theme' in Cookies.get()) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
   const themeSwitcher = () => {
-    if (localStorage.getItem('theme') === 'dark') {
-      localStorage.setItem('theme', 'light');
+    if (Cookies.get('theme') === 'dark') {
+      Cookies.set('theme', 'light');
       setTheme('light');
       if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
+        Cookies.get('theme') === 'dark' ||
+        (!('theme' in Cookies.get()) &&
           window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
         document.documentElement.classList.add('dark');
@@ -38,11 +42,11 @@ const Navbar = () => {
         document.documentElement.classList.remove('dark');
       }
     } else {
-      localStorage.setItem('theme', 'dark');
+      Cookies.set('theme', 'dark');
       setTheme('dark');
       if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
+        Cookies.get('theme') === 'dark' ||
+        (!('theme' in Cookies.get()) &&
           window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
         document.documentElement.classList.add('dark');
