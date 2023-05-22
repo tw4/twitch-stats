@@ -10,10 +10,11 @@ import Cookies from 'js-cookie';
 const Navbar = () => {
   const router = useRouter();
 
-  const [theme, setTheme] = useState<string>(Cookies.get('theme') || 'light');
+  const [theme, setTheme] = useState<string>('');
   const [searchValue, setSearchValue] = useState<string>('');
 
   useEffect(() => {
+    setTheme(Cookies.get('theme')!);
     if (!Cookies.get('theme')) {
       Cookies.set('theme', 'light');
     }
@@ -105,7 +106,7 @@ const Navbar = () => {
         className="rounded-full bg-black dark:bg-white p-1"
       >
         {theme === 'dark' ? (
-          <MdLightMode className="text-dark" />
+          <MdLightMode className="text-black" />
         ) : (
           <MdDarkMode className="text-white" />
         )}
