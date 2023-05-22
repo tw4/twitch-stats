@@ -1,9 +1,10 @@
-import { useRouter } from 'next/router';
+import { FC } from 'react';
 
-const StreamerDeal = () => {
-  const route = useRouter();
-  const userID = route.query.id;
-  return <div>Hello world id = {userID}</div>;
+type IProps = {
+  params: { id: string };
+};
+const StreamerDeal: FC<IProps> = ({ params }) => {
+  return <div>Hello world id = {params.id}</div>;
 };
 
 export default StreamerDeal;
