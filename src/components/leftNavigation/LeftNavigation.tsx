@@ -24,7 +24,7 @@ const LeftNavigation = () => {
     <div
       className={`bg-[#efeff1] p-2  ${
         isNarrow ? 'w-fit' : 'w-[15vw]'
-      } border-t-2 border-gray-200 dark:bg-[#161616f2] dark:text-white dark:border-black lg:w-fit`}
+      } border-t-2 border-gray-200 dark:bg-[#1D1D20] dark:text-white dark:border-black lg:w-fit`}
     >
       {/* head */}
       {isNarrow ? (

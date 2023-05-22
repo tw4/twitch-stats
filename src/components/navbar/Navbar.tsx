@@ -63,7 +63,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row pl-5 pr-5 justify-between items-center h-12 w-full bg-white dark:bg-[#161616f2]">
+    <div className="flex flex-row pl-5 pr-5 justify-between items-center h-12 w-full bg-white dark:bg-[#18181b]">
       {/* left side */}
       <Link
         aria-label="go-to-home"

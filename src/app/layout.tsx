@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-[#f7f7f8] dark:bg-[#0e0e10]">
         <Navbar />
         <div className="flex flex-row">
           <LeftNavigation />
