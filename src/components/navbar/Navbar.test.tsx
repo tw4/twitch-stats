@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '@/components/navbar/Navbar';
 import '@testing-library/jest-dom/extend-expect'; // important for expect
 import { beforeEach } from '@jest/globals';
+import Cookies from 'js-cookie';
 
 // this code allows us to emulate the useRoute() function
 jest.mock('next/navigation', () => ({
@@ -46,7 +47,7 @@ test('is theme button visible', () => {
 test('theme-button control user click', () => {
   const themeButton = screen.getByRole('button', { name: 'theme-button' });
   fireEvent.click(themeButton);
-  expect(localStorage.getItem('theme')).toEqual('dark');
+  expect(Cookies.get('theme')).toEqual('dark');
 });
 
 test('search input expected value control', () => {
