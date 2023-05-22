@@ -13,17 +13,14 @@ const Navbar = () => {
   const [searchValue, setSearchValue] = useState<string>('');
 
   useEffect(() => {
-    if (!localStorage.getItem('theme')) {
-      localStorage.setItem('theme', 'light');
-    }
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('theme');
+      if (!storedTheme) {
+        localStorage.setItem('theme', 'light');
+        setTheme('light');
+      } else {
+        setTheme(storedTheme);
+      }
     }
   }, []);
 
