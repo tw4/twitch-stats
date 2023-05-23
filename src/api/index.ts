@@ -72,3 +72,24 @@ export const getTopClipsMonth = async () => {
 
   return res.json();
 };
+
+export const getClipById = async (id: string) => {
+  const res = await fetch(`${process.env.API_URL}/helix/clips?id=${id}`, {
+    method: 'GET',
+    headers: header,
+  });
+
+  return res.json();
+};
+
+export const getClipsByBroadcasterId = async (broadcasterId: string) => {
+  const res = await fetch(
+    `${process.env.API_URL}/helix/clips?broadcaster_id=${broadcasterId}`,
+    {
+      method: 'GET',
+      headers: header,
+    }
+  );
+
+  return res.json();
+};
