@@ -26,6 +26,7 @@ const ClipPage: FC<IProps> = ({ params }) => {
         return (
           <div>
             <iframe
+              data-testid="clip"
               className="w-[85vw] h-[50vh]"
               src={`${clip.embed_url}&parent=${process.env.PARENT}`}
               allowFullScreen
