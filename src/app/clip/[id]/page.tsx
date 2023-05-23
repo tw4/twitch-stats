@@ -27,7 +27,7 @@ const ClipPage: FC<IProps> = ({ params }) => {
           <div>
             <iframe
               className="w-[85vw] h-[50vh]"
-              src={`${clip.embed_url}&parent=localhost&parent=clipper.localhost`}
+              src={`${clip.embed_url}&parent=${process.env.PARENT}`}
               allowFullScreen
             ></iframe>
             <div className="mt-5 dark:text-white">
