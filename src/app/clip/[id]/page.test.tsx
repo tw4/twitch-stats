@@ -63,6 +63,11 @@ beforeEach(async () => {
 test('is clip visible', () => {
   const clip = screen.getByTestId('clip');
   expect(clip).toBeInTheDocument();
+
+  expect(clip).toHaveAttribute(
+    'src',
+    `www.example.com/embed_url&parent=${process.env.PARENT}`
+  );
 });
 
 test('is clip create at visible', () => {
