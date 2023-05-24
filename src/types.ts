@@ -1,7 +1,7 @@
 export type Streams = {
   id: string;
   user_id: string;
-  login: string;
+  user_login: string;
   user_name: string;
   game_id: string;
   game_name: string;
@@ -33,4 +33,17 @@ export type Clip = {
   thumbnail_url: string;
   duration: number;
   vod_offset: number;
+};
+
+export type User = {
+  id: string;
+  login: string;
+  display_name: string;
+  type: string;
+  broadcaster_type: string;
+  description: string;
+  profile_image_url: string;
+  offline_image_url: string;
+  view_count: number;
+  created_at: Date;
 };
