@@ -21,7 +21,7 @@ const ClipPage: FC<IProps> = ({ params }) => {
     });
   }, []);
   return (
-    <div>
+    <div className="h-[89.2vh] overflow-y-scroll scrollbar">
       {clip.map(clip => {
         return (
           <div>
