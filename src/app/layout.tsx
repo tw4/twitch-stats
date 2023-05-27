@@ -18,7 +18,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex flex-row">
           <LeftNavigation />
-          <div>{children}</div>
+          <div className="flex flex-col justify-center w-full">{children}</div>
         </div>
       </body>
     </html>
