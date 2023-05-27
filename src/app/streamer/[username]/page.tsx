@@ -29,13 +29,13 @@ const StreamPage: FC<IProps> = ({ params }) => {
         <div className="dark:text-white">
           <iframe
             data-testid="stream"
-            className="w-[85vw] h-[50vh]"
+            className="w-full h-[50vh]"
             src={`https://player.twitch.tv/?channel=${user?.login}&parent=${process.env.PARENT}`}
             height="720"
             width="1280"
           ></iframe>
           {/* streamer info side */}
-          <div className="mt-5 flex flex-row items-center space-x-2">
+          <div className="mt-5  flex flex-row items-center space-x-2">
             <img
               className="rounded-full w-20"
               src={user?.profile_image_url}
@@ -63,7 +63,7 @@ const StreamPage: FC<IProps> = ({ params }) => {
               <p className="mt-10">{user?.description}</p>
             </div>
           </div>
-          <div>
+          <div className="p-10">
             <p className="font-bold text-3xl pt-5 pb-5 ">OTHER CLIPS</p>
             <ClipList clipList={clips} />
           </div>

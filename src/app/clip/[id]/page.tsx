@@ -27,7 +27,7 @@ const ClipPage: FC<IProps> = ({ params }) => {
           <div>
             <iframe
               data-testid="clip"
-              className="w-[85vw] h-[50vh]"
+              className="w-full h-[50vh]"
               src={`${clip.embed_url}&parent=${process.env.PARENT}`}
               allowFullScreen
             ></iframe>
@@ -41,7 +41,7 @@ const ClipPage: FC<IProps> = ({ params }) => {
           </div>
         );
       })}
-      <div>
+      <div className="p-10">
         <p className="font-bold text-3xl pt-5 pb-5 dark:text-white">
           OTHER CLIPS
         </p>

@@ -6,7 +6,7 @@ const Home = async () => {
   const mostWatchedClipsThisWeek = await getTopClipsWeek();
   const mostWatchedClipsThisMonth = await getTopClipsMonth();
   return (
-    <main className="p-10 h-[94.3vh] w-[85vw] overflow-y-scroll scrollbar  dark:text-white">
+    <main className="p-10 h-[94.3vh] w-full overflow-y-scroll scrollbar  dark:text-white">
       {/* today's most popular clips side */}
       <h1 className="font-bold text-3xl pt-5 pb-5">
         TODAY'S MOST POPULAR CLIPS
