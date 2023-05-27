@@ -79,7 +79,7 @@ test('is creator Name link', () => {
 });
 
 test('is creator Name visible', () => {
-  const creatorName = screen.getByText(mockClip.creator_name);
+  const creatorName = screen.getByText(`Clipped by ${mockClip.creator_name}`);
   expect(creatorName).toBeInTheDocument();
 });
 

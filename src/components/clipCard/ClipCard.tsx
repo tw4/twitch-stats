@@ -52,7 +52,7 @@ const ClipCard: FC<IProps> = ({ clip }) => {
           className="text-sm block hover:text-purple-500"
           href={`/streamer/${clip.creator_name}`}
         >
-          {clip.creator_name}
+          Clipped by {clip.creator_name}
         </Link>
       </div>
     </div>
