@@ -23,9 +23,9 @@ const LeftNavigationItem: FC<IProps> = ({ streams, isNarrow }) => {
       />
       {/* mid side */}
       <p
-        className={`w-24 break-all text-sm ${
+        className={`w-28 break-all text-start text-sm ${
           isNarrow ? 'hidden' : ''
-        } lg:hidden`}
+        } md:hidden`}
       >
         {streams.user_login}
       </p>
