@@ -1,9 +1,4 @@
 import { bringDate } from '@/types';
-import {
-  bringTheYesterday,
-  bringTheWeek,
-  bringTheMonth,
-} from '@/utils/getDate';
 
 const header = {
   'Client-ID': `${process.env.CLIENT_ID}`,
