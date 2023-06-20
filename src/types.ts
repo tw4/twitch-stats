@@ -47,3 +47,8 @@ export type User = {
   view_count: number;
   created_at: Date;
 };
+
+export type bringDate = {
+  startDay: Date;
+  endDay: Date;
+};

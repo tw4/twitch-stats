@@ -1,3 +1,4 @@
+import { bringDate } from '@/types';
 import {
   bringTheYesterday,
   bringTheWeek,
@@ -30,10 +31,11 @@ export const getTopStreamersList = async () => {
   return res.json();
 };
 
-export const getTopClipsToDay = async () => {
-  const yesterday = bringTheYesterday().toISOString();
+export const getTopClipsToDay = async (yesterDay: Date) => {
   const res = await fetch(
-    `${process.env.API_URL}/helix/clips?game_id=509658&started_at=${yesterday}`,
+    `${
+      process.env.API_URL
+    }/helix/clips?game_id=509658&started_at=${yesterDay.toISOString()}`,
     {
       method: 'GET',
       headers: header,
@@ -43,8 +45,7 @@ export const getTopClipsToDay = async () => {
   return res.json();
 };
 
-export const getTopClipsWeek = async () => {
-  const week = bringTheWeek();
+export const getTopClipsWeek = async (week: bringDate) => {
   const res = await fetch(
     `${
       process.env.API_URL
@@ -58,8 +59,7 @@ export const getTopClipsWeek = async () => {
   return res.json();
 };
 
-export const getTopClipsMonth = async () => {
-  const month = bringTheMonth();
+export const getTopClipsMonth = async (month: bringDate) => {
   const res = await fetch(
     `${
       process.env.API_URL

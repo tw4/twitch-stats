@@ -1,3 +1,5 @@
+import { bringDate } from '@/types';
+
 export const bringTheYesterday = () => {
   const today = new Date();
   const yesterday = new Date(today);
@@ -9,12 +11,14 @@ export const bringTheWeek = () => {
   const endDay = new Date();
   const startDay = new Date(endDay);
   startDay.setDate(startDay.getDate() - 7);
-  return { startDay: startDay, endDay: endDay };
+  const week: bringDate = { startDay: startDay, endDay: endDay };
+  return week;
 };
 
 export const bringTheMonth = () => {
   const endDay = new Date();
   const startDay = new Date(endDay);
   startDay.setDate(endDay.getDate() - 30);
-  return { startDay: startDay, endDay: endDay };
+  const month: bringDate = { startDay: startDay, endDay: endDay };
+  return month;
 };
